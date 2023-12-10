@@ -45,8 +45,12 @@
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
 
+//#include <stdlib.h>
+
 #include <stdio.h>
 #include "platform.h"
+//#include <stdbool.h>
+//#include <string.h>
 
 #include "xparameters.h"
 #include "xgpio.h"
@@ -171,6 +175,7 @@ int IntcInitFunction(u16 DeviceId, XGpio *GpioInstancePtr) {
 
 	return XST_SUCCESS;
 }
+
 
 int main() {
 	init_platform();

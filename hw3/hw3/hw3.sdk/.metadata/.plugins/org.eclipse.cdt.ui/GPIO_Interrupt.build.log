@@ -1,4 +1,4 @@
-16:11:07 **** Auto Build of configuration Debug for project GPIO_Interrupt ****
+00:31:30 **** Auto Build of configuration Debug for project GPIO_Interrupt ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size GPIO_Interrupt.elf  |tee "GPIO_Interrupt.elf.size"
 'Finished building: GPIO_Interrupt.elf.size'
 ' '
 
-16:11:09 Build Finished (took 1s.75ms)
+00:31:31 Build Finished (took 807ms)
 
