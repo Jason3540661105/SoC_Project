@@ -44,6 +44,7 @@
  *   uartlite    Configurable only in HW design
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
+
 //initial head file
 #include <stdio.h>
 #include "platform.h"
@@ -62,19 +63,40 @@
 #define LEDS_DEVICE_ID			XPAR_AXI_GPIO_0_DEVICE_ID					//led8bits
 #define BTNS_DEVICE_ID			XPAR_AXI_GPIO_1_DEVICE_ID					//btn5bits
 
-#define INTC_GPIO_INTERRUPT_ID 	XPAR_FABRIC_AXI_GPIO_1_IP2INTC_IRPT_INTR	//
+#define INTC_GPIO_INTERRUPT_ID 	XPAR_FABRIC_AXI_GPIO_1_IP2INTC_IRPT_INTR	//我猜是[PS]設定的中斷接口
 #define BTN_INT 				XGPIO_IR_CH1_MASK
 
+// definitions Map
+#define Map1_HEIGHT	9
+#define Map1_WIDTH	8
 
-XUartPs_Config *Config_1;	//宣告一個"Config_1"的指標變數，並使用「XUartPs_Config」的結構
+//volatile : 每次訪問時從記憶體中重新讀取其值
+volatile static u32 ByteSend = 0 , TotalByteSend = 0;
+volatile static int map[Map1_HEIGHT][Map1_WIDTH]= {0};
+volatile static int game_state = 0;						//未結束:0   結束:1
+
+int init_map[Map1_HEIGHT][Map1_WIDTH] =
+	{
+		{0, 0, 1, 1, 1, 1, 1, 0},
+		{1, 1, 1, 0, 0, 0, 1, 0},
+		{1, 3, 5, 4, 0, 0, 1, 0},
+		{1, 1, 1, 0, 4, 3, 1, 0},
+		{1, 3, 1, 1, 4, 0, 1, 0},
+		{1, 0, 1, 0, 3, 0, 1, 1},
+		{1, 4, 0, 0, 4, 4, 3, 1},
+		{1, 0, 0, 0, 3, 0, 0, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1}
+	};
+
+static int led_data;
+static int btn_value;
+static u8 TransmitBuffer[Map1_HEIGHT * Map1_WIDTH + 1] = {0};	//儲存轉換後[map的一維陣列]+[判斷遊戲是否結束]，共有:73bits
+
+XUartPs_Config *Config_1;	//宣告"Config_1"的指標變數，並使用「XUartPs_Config」的結構
 XUartPs Uart_PS_1;			//Declare The instance of the UART Driver
 
 XGpio LEDInst, BTNInst;
 XScuGic INTCInst;
-
-
-static int led_data;
-static int btn_value;
 
 //----------------------------------------------------
 // PROTOTYPE FUNCTIONS (自己寫的函示)
@@ -83,64 +105,66 @@ static int btn_value;
 /*static : 限定函示只能在該文件使用，不能被其他程式調用*/
 
 //1. UART-Send Data-Partial
-static int Uart_Init(void);
-
+static int	Uart_Init(void);
+static int	Uart_SendData_test(void *InstancePtr);
 
 //2. Button-interrupt-partial
 static int 	InterruptSystemSetup(XScuGic *XScuGicInstancePtr);
 static int 	IntcInitFunction_BTN(u16 DeviceId, XGpio *GpioInstancePtr);
 static void	BTN_Intr_Handler(void *baseaddr_p);
-static int	Uart_HelloWorld(void *InstancePtr);
+static void	MapToArray(u8 *byteArray, int map[Map1_HEIGHT][Map1_WIDTH]);
+
 
 int main()
 {
-    init_platform();
-    int status;
+	init_platform();
+	int status;
 
-    	// Initialise LEDs
-    	status = XGpio_Initialize(&LEDInst, LEDS_DEVICE_ID);
-    	if (status != XST_SUCCESS)
-    		return XST_FAILURE;
+    // Initialise LEDs
+    status = XGpio_Initialize(&LEDInst, LEDS_DEVICE_ID);
+    if (status != XST_SUCCESS)
+    	return XST_FAILURE;
 
-    	// Initialise Push Buttons
-    	status = XGpio_Initialize(&BTNInst, BTNS_DEVICE_ID);
-    	if (status != XST_SUCCESS)
-    		return XST_FAILURE;
+    // Initialise Push Buttons
+    status = XGpio_Initialize(&BTNInst, BTNS_DEVICE_ID);
+    if (status != XST_SUCCESS)
+    	return XST_FAILURE;
 
-    	// Initialise UART Setup
-    	if(Uart_Init() == XST_FAILURE){
-    		return XST_FAILURE;
-    	}
-    	else{
-    		Uart_HelloWorld(&Uart_PS_1);
-    	}
+    // Initialise UART Setup
+    if(Uart_Init() == XST_FAILURE){
+    	return XST_FAILURE;
+    }
+    else{
+    	printf("Uart Initialization Successful!");
+    }
 
-    	// Set LEDs direction to outputs
-    	XGpio_SetDataDirection(&LEDInst, 1, 0x00);
+    // Set LEDs direction to outputs
+    XGpio_SetDataDirection(&LEDInst, 1, 0x00);
 
-    	// Set all buttons direction to inputs
-    	XGpio_SetDataDirection(&BTNInst, 1, 0xFF);
+    // Set all buttons direction to inputs
+    XGpio_SetDataDirection(&BTNInst, 1, 0xFF);
 
-    	// Initialize interrupt controller
-    	status = IntcInitFunction_BTN(INTC_DEVICE_ID, &BTNInst);
-    	if (status != XST_SUCCESS)
-    		return XST_FAILURE;
+    // Initialize interrupt controller
+    status = IntcInitFunction_BTN(INTC_DEVICE_ID, &BTNInst);
+    if (status != XST_SUCCESS)
+    	return XST_FAILURE;
 
-    	XGpio LED_XGpio;			// 宣告一個GPIO用的結構.
-    	int LED_num = 0b00000000;	// 宣告一個變數,做運算用暫存用.
+    XGpio LED_XGpio;			// 宣告一個GPIO用的結構.
+    int LED_num = 0b00000000;	// 宣告一個變數,做運算用暫存用.
 
-    	XGpio_Initialize(&LED_XGpio, XPAR_AXI_GPIO_0_DEVICE_ID);	// 初始化LED_XGpio.並連接到AXI_GPIO_0的設備
-    	XGpio_SetDataDirection(&LED_XGpio, 1, 0x00);				// 設置通道.(&LED_XGpio, 1, 0) 0或0x00代表資料輸出
+    XGpio_Initialize(&LED_XGpio, XPAR_AXI_GPIO_0_DEVICE_ID);	// 初始化LED_XGpio.並連接到AXI_GPIO_0的設備
+    XGpio_SetDataDirection(&LED_XGpio, 1, 0x00);				// 設置通道.(&LED_XGpio, 1, 0) 0或0x00代表資料輸出
 
-    	printf("\nStart!!!\n");
+    printf("\nStart!!!\n");
 
-    	while(1) {
-    			LED_num = LED_num + 1;
-    	    	//printf("Main Count_LED_num = 0x%d\n", LED_num);
-    	    	//XGpio_DiscreteWrite(&LED_XGpio, 1, LED_num);		// LED_XGpio通道,送LED_num值進去.
-    	    	usleep(500000);
-    	    }
-    	return 0;
+    while(1){
+    		LED_num = LED_num + 1;
+    	    //printf("Main Count_LED_num = 0x%d\n", LED_num);
+    	    //XGpio_DiscreteWrite(&LED_XGpio, 1, LED_num);		// LED_XGpio通道,送LED_num值進去.
+    	    usleep(500000);
+    }
+
+    return 0;
     cleanup_platform();
     return 0;
 }
@@ -180,24 +204,41 @@ int Uart_Init(void){
 	return XST_SUCCESS;
 
 }
+
 //1.2 UART-Send-Data ?
-int Uart_HelloWorld(void *InstancePtr){
-	int SentCount = 0;
+int Uart_SendData_test(void *InstancePtr){
+	u16 i;
 
-	//u8 HelloWorld[] = "Hello_World";
-	/*
-	while (SentCount < (sizeof(HelloWorld) - 1)) {
-		SentCount += XUartPs_Send(&Uart_PS_1,&HelloWorld[SentCount], 1);
-	}
-	*/
+	//u8 TransmitBuffer[8] = "fuck you";			//Data content format by ASCII
+	MapToArray(TransmitBuffer, init_map);
 
-	char init_map[16] = "1,2,3,4,5,6,7,8";
-	while (SentCount < (sizeof(init_map)-1)) {
-		SentCount += XUartPs_Send(&Uart_PS_1,(u8*)&init_map[SentCount], 1);
+	for (i = 0; i < (sizeof(TransmitBuffer)); i++) {
+		printf("\nTransmitBuffer[%u]  Data:[%d]\n",(i), TransmitBuffer[i]);
 	}
-	return SentCount;
+
+	//TransmitBuffer
+	while (TotalByteSend < (sizeof(TransmitBuffer))) {
+			ByteSend = XUartPs_Send(&Uart_PS_1,(u8*)&TransmitBuffer[TotalByteSend], 1);
+			TotalByteSend += ByteSend;
+	}
+	TotalByteSend = 0;
+	return TotalByteSend;
 }
 
+//1.3 Make UART transmission content processing
+//做到這邊2023/12/10 接續完成uart資料轉換-並可以傳輸
+void MapToArray(u8 *byteArray, int map[Map1_HEIGHT][Map1_WIDTH]) {
+	u16 i,j;
+
+    for (i = 0; i < Map1_HEIGHT; i++) {
+        for (j = 0; j < Map1_WIDTH; j++) {
+            byteArray[i * Map1_WIDTH + j] = map[i][j];
+            //printf("byteArray[%u] = map[%d][%d] ; Data:[%d]\n",(i * Map1_WIDTH + j),i,j,map[i][j]);
+        }
+    }
+    byteArray[Map1_HEIGHT * Map1_WIDTH] = game_state;
+
+}
 
 //----------------------------------------------------
 // 2. Button-interrupt-partial
@@ -213,7 +254,6 @@ int InterruptSystemSetup(XScuGic *XScuGicInstancePtr) {
 			(Xil_ExceptionHandler) XScuGic_InterruptHandler,
 			XScuGicInstancePtr);
 	Xil_ExceptionEnable();
-
 	return XST_SUCCESS;
 
 }
@@ -252,7 +292,6 @@ int IntcInitFunction_BTN(u16 DeviceId, XGpio *GpioInstancePtr) {
 
 //2.2 Button interrupt時會作的內容
 void BTN_Intr_Handler(void *InstancePtr) {
-
 	// Disable GPIO interrupts
 	XGpio_InterruptDisable(&BTNInst, BTN_INT);
 	// Ignore additional button presses
@@ -262,19 +301,46 @@ void BTN_Intr_Handler(void *InstancePtr) {
 	btn_value = XGpio_DiscreteRead(&BTNInst, 1);
 	// Increment counter based on button value
 	// Reset if centre button pressed
-	if (btn_value != 1)
-	{
-		printf("Interrupt\n");
-		led_data = led_data + btn_value;
-		printf("Button Value is : %d\n",btn_value);
-		printf("intterupt_led_data = 0x%d\n", led_data);
-		usleep(20000); //sleep 不確定
-	}
-	else
-	{
+	if(btn_value != 1){
+		Uart_SendData_test(&Uart_PS_1);
+		switch(btn_value){
+			case 16:{
+				//MoveUp(函示)
+				led_data = btn_value;
+				printf("\nGame Character Move UP : %d\n",btn_value);
+				usleep(180000);
+			}break;
+			case 2:{
+				//MoveDown(函示)
+				led_data = btn_value;
+				printf("\nGame Character Move Down : %d\n",btn_value);
+				usleep(180000);
+			}break;
+			case 4:{
+				//MoveLeft(函示)
+				led_data = btn_value;
+				printf("\nGame Character Move Left : %d\n",btn_value);
+				usleep(180000);
+			}break;
+			case 8:{
+				//MoveRight(函示)
+				led_data = btn_value;
+				printf("\nGame Character Move Right : %d\n",btn_value);
+				usleep(180000);
+			}break;
+			case 0:{
+				//MoveReset(函示)
+				led_data = btn_value;
+				printf("\nReset Game Map : %d\n",btn_value);
+				usleep(180000);
+			}break;
+			default:{
+				printf("Error : Unknown btn_value");
+			}break;
+		}
+	}else{
 		led_data = 0;
 	}
-
 	XGpio_DiscreteWrite(&LEDInst, 1, led_data);
 	(void) XGpio_InterruptClear(&BTNInst, BTN_INT);
 	// Enable GPIO interrupts

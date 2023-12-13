@@ -2,10 +2,10 @@
 # Vivado v2018.2.2 (64-bit)
 # SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
 # IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-# Start of session at: Sat Dec  9 14:40:17 2023
-# Process ID: 2268
+# Start of session at: Wed Dec 13 15:16:24 2023
+# Process ID: 36688
 # Current directory: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32532 C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\test\sdk\uart_test1\uart_test1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27720 C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\test\sdk\uart_test1\uart_test1.xpr
 # Log file: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/vivado.log
 # Journal file: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1\vivado.jou
 #-----------------------------------------------------------
@@ -18,7 +18,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2018.2/data/ip'.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 876.887 ; gain = 128.102
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 875.730 ; gain = 132.258
 update_compile_order -fileset sources_1
 launch_sdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
 INFO: [Vivado 12-393] Launching SDK...
@@ -26,312 +26,13 @@ INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/jason/Desktop/verilog_lab
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
 open_bd_design {C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/uart_test1.bd}
 Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
-Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
 Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
 Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
 Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
 Successfully read diagram <uart_test1> from BD file <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/uart_test1.bd>
-open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 999.422 ; gain = 95.719
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
-endgroup
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-set_property -dict [list CONFIG.C_GPIO_WIDTH {8} CONFIG.GPIO_BOARD_INTERFACE {leds_8bits}] [get_bd_cells axi_gpio_1]
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-regenerate_bd_layout
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_nets axi_gpio_0_ip2intc_irpt] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_cells axi_gpio_0]
-delete_bd_objs [get_bd_cells axi_gpio_1]
-delete_bd_objs [get_bd_intf_ports btns_5bits]
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
-endgroup
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-set_property -dict [list CONFIG.C_GPIO_WIDTH {8} CONFIG.GPIO_BOARD_INTERFACE {leds_8bits}] [get_bd_cells axi_gpio_0]
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
-endgroup
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-set_property -dict [list CONFIG.C_GPIO_WIDTH {5} CONFIG.C_ALL_INPUTS {1} CONFIG.C_INTERRUPT_PRESENT {1} CONFIG.GPIO_BOARD_INTERFACE {btns_5bits}] [get_bd_cells axi_gpio_0]
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-set_property -dict [list CONFIG.C_INTERRUPT_PRESENT {0}] [get_bd_cells axi_gpio_1]
-regenerate_bd_layout
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_1/GPIO'
-startgroup
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_0/S_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_0/S_AXI]
-</axi_gpio_0/S_AXI/Reg> is being mapped into </processing_system7_0/Data> at <0x41200000 [ 64K ]>
-apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_5bits ( Push buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
-INFO: [board_rule 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells /axi_gpio_0]
-INFO: [board_rule 100-100] set_property CONFIG.GPIO_BOARD_INTERFACE btns_5bits [get_bd_cells /axi_gpio_0]
-INFO: [board_rule 100-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_5bits
-INFO: [board_rule 100-100] connect_bd_intf_net /btns_5bits /axi_gpio_0/GPIO
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (50 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (50 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_gpio_1/S_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins axi_gpio_1/S_AXI]
-</axi_gpio_1/S_AXI/Reg> is being mapped into </processing_system7_0/Data> at <0x41210000 [ 64K ]>
-apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_5bits ( Push buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_1/GPIO]
-INFO: [board_rule 100-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells /axi_gpio_1]
-INFO: [board_rule 100-100] set_property CONFIG.GPIO_BOARD_INTERFACE btns_5bits [get_bd_cells /axi_gpio_1]
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-INFO: [board_rule 100-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 btns_5bits_0
-INFO: [board_rule 100-100] connect_bd_intf_net /btns_5bits_0 /axi_gpio_1/GPIO
-endgroup
-regenerate_bd_layout
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-startgroup
-set_property -dict [list CONFIG.C_GPIO_WIDTH {8} CONFIG.C_ALL_INPUTS {0} CONFIG.C_INTERRUPT_PRESENT {0} CONFIG.GPIO_BOARD_INTERFACE {leds_8bits}] [get_bd_cells axi_gpio_0]
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-endgroup
-startgroup
-endgroup
-regenerate_bd_layout
-save_bd_design
-Wrote  : <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/uart_test1.bd> 
-Wrote  : <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/ui/bd_7ce9354e.ui> 
-delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_intf_ports btns_5bits]
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-WARNING: [BD 5-235] No pins matched 'get_bd_pins /axi_gpio_0/GPIO'
-apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {leds_8bits ( LED ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_gpio_0/GPIO]
-INFO: [board_rule 100-100] set_property CONFIG.GPIO_BOARD_INTERFACE leds_8bits [get_bd_cells /axi_gpio_0]
-INFO: [board_rule 100-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 leds_8bits
-INFO: [board_rule 100-100] connect_bd_intf_net /leds_8bits /axi_gpio_0/GPIO
-startgroup
-set_property -dict [list CONFIG.C_INTERRUPT_PRESENT {1}] [get_bd_cells axi_gpio_1]
-endgroup
-connect_bd_net [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins axi_gpio_1/ip2intc_irpt]
-save_bd_design
-Wrote  : <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/uart_test1.bd> 
-Wrote  : <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/ui/bd_7ce9354e.ui> 
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-set_property location {3 924 -328} [get_bd_cells axi_gpio_0]
-regenerate_bd_layout
-save_bd_design
-Wrote  : <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/ui/bd_7ce9354e.ui> 
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 12
-WARNING: [BD 41-1771] Block interface /axi_gpio_1/GPIO has associated board param 'GPIO_BOARD_INTERFACE', which is set to board part interface 'btns_5bits'. This interface is connected to an external interface /btns_5bits_0, whose name 'btns_5bits_0' does not match with the board interface name 'btns_5bits'.
-This is a visual-only issue - this interface /axi_gpio_1/GPIO will be connected to board interface 'btns_5bits'. If desired, please change the name of this port /btns_5bits_0 manually.
-Wrote  : <C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/uart_test1.bd> 
-VHDL Output written to : C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/synth/uart_test1.v
-VHDL Output written to : C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/sim/uart_test1.v
-VHDL Output written to : C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/hdl/uart_test1_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at D:/Vivado/Vivado/2018.2/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/ip/uart_test1_auto_pc_0/uart_test1_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
-Exporting to file C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/hw_handoff/uart_test1.hwh
-Generated Block Design Tcl file C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/hw_handoff/uart_test1_bd.tcl
-Generated Hardware Definition File C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.srcs/sources_1/bd/uart_test1/synth/uart_test1.hwdef
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP uart_test1_axi_gpio_1_1, cache-ID = 81333dd3ee046f01; cache size = 4.288 MB.
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP uart_test1_auto_pc_0, cache-ID = 7f4a0a9e21cf14e5; cache size = 4.288 MB.
-[Sat Dec  9 15:02:34 2023] Launched uart_test1_xbar_0_synth_1, uart_test1_axi_gpio_0_1_synth_1, synth_1...
-Run output will be captured here:
-uart_test1_xbar_0_synth_1: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.runs/uart_test1_xbar_0_synth_1/runme.log
-uart_test1_axi_gpio_0_1_synth_1: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.runs/uart_test1_axi_gpio_0_1_synth_1/runme.log
-synth_1: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.runs/synth_1/runme.log
-[Sat Dec  9 15:02:34 2023] Launched impl_1...
-Run output will be captured here: C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1189.625 ; gain = 132.637
-regenerate_bd_layout
-save_bd_design
-file copy -force C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.runs/impl_1/uart_test1_wrapper.sysdef C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
-
+open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1008.891 ; gain = 101.949
 launch_sdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
 INFO: [Vivado 12-393] Launching SDK...
 INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
@@ -340,14 +41,3 @@ launch_sdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/
 INFO: [Vivado 12-393] Launching SDK...
 INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
-regenerate_bd_layout
-WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
-save_bd_design
-file copy -force C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.runs/impl_1/uart_test1_wrapper.sysdef C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
-
-launch_sdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
-INFO: [Vivado 12-393] Launching SDK...
-INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/test/sdk/uart_test1/uart_test1.sdk/uart_test1_wrapper.hdf
-INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
-exit
-INFO: [Common 17-206] Exiting Vivado at Sun Dec 10 00:59:03 2023...
