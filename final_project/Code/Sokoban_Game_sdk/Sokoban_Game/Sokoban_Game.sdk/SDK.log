@@ -1,0 +1,1250 @@
+00:18:47 INFO  : Registering command handlers for SDK TCF services
+00:18:47 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+00:18:50 INFO  : XSCT server has started successfully.
+00:18:50 INFO  : Successfully done setting XSCT server connection channel  
+00:18:53 INFO  : Successfully done setting SDK workspace  
+00:18:53 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+00:22:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:22:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+00:22:29 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+00:22:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:22:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+00:22:46 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+00:22:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+00:22:59 INFO  : 'fpga -state' command is executed.
+00:22:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:22:59 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+00:22:59 INFO  : 'jtag frequency' command is executed.
+00:22:59 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+00:22:59 INFO  : Context for 'APU' is selected.
+00:22:59 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+00:22:59 INFO  : 'configparams force-mem-access 1' command is executed.
+00:22:59 INFO  : Context for 'APU' is selected.
+00:22:59 INFO  : 'stop' command is executed.
+00:23:00 INFO  : 'ps7_init' command is executed.
+00:23:00 INFO  : 'ps7_post_config' command is executed.
+00:23:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:23:00 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:23:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:23:00 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:23:00 INFO  : 'configparams force-mem-access 0' command is executed.
+00:23:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+00:23:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:23:00 INFO  : 'con' command is executed.
+00:23:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+00:23:00 INFO  : Disconnected from the channel tcfchan#1.
+10:06:51 INFO  : Registering command handlers for SDK TCF services
+10:06:52 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+10:06:55 INFO  : XSCT server has started successfully.
+10:06:58 INFO  : Successfully done setting XSCT server connection channel  
+10:06:58 INFO  : Successfully done setting SDK workspace  
+10:06:58 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+10:06:58 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+10:43:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:43:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+10:43:29 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+10:43:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+10:43:40 INFO  : 'fpga -state' command is executed.
+10:43:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:43:40 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+10:43:40 INFO  : 'jtag frequency' command is executed.
+10:43:40 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:43:40 INFO  : Context for 'APU' is selected.
+10:43:40 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+10:43:40 INFO  : 'configparams force-mem-access 1' command is executed.
+10:43:40 INFO  : Context for 'APU' is selected.
+10:43:40 INFO  : 'stop' command is executed.
+10:43:41 INFO  : 'ps7_init' command is executed.
+10:43:41 INFO  : 'ps7_post_config' command is executed.
+10:43:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:43:41 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+10:43:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:43:41 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:43:41 INFO  : 'configparams force-mem-access 0' command is executed.
+10:43:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:43:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:43:41 INFO  : 'con' command is executed.
+10:43:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+10:43:41 INFO  : Disconnected from the channel tcfchan#1.
+10:58:29 INFO  : Registering command handlers for SDK TCF services
+10:58:30 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+10:58:32 INFO  : XSCT server has started successfully.
+10:58:32 INFO  : Successfully done setting XSCT server connection channel  
+10:58:32 INFO  : Successfully done setting SDK workspace  
+10:58:32 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+10:58:32 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+11:12:08 INFO  : Registering command handlers for SDK TCF services
+11:12:09 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+11:12:11 INFO  : XSCT server has started successfully.
+11:12:11 INFO  : Successfully done setting XSCT server connection channel  
+11:12:11 INFO  : Successfully done setting SDK workspace  
+11:12:11 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+11:12:11 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+11:12:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:12:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:12:24 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+11:14:24 INFO  : Registering command handlers for SDK TCF services
+11:14:24 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+11:14:26 INFO  : XSCT server has started successfully.
+11:14:26 INFO  : Successfully done setting XSCT server connection channel  
+11:14:26 INFO  : Successfully done setting SDK workspace  
+11:14:26 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+11:14:26 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+11:14:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:15:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:15:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:15:06 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+11:15:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:15:30 INFO  : 'fpga -state' command is executed.
+11:15:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:15:30 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:15:30 INFO  : 'jtag frequency' command is executed.
+11:15:30 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:15:30 INFO  : Context for 'APU' is selected.
+11:15:31 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+11:15:31 INFO  : 'configparams force-mem-access 1' command is executed.
+11:15:31 INFO  : Context for 'APU' is selected.
+11:15:31 INFO  : 'stop' command is executed.
+11:15:31 INFO  : 'ps7_init' command is executed.
+11:15:31 INFO  : 'ps7_post_config' command is executed.
+11:15:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:15:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:15:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:15:31 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:15:31 INFO  : 'configparams force-mem-access 0' command is executed.
+11:15:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:15:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:15:31 INFO  : 'con' command is executed.
+11:15:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:15:31 INFO  : Disconnected from the channel tcfchan#1.
+11:20:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:20:03 INFO  : 'fpga -state' command is executed.
+11:20:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:20:03 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:20:03 INFO  : 'jtag frequency' command is executed.
+11:20:03 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:20:03 INFO  : Context for 'APU' is selected.
+11:20:05 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+11:20:05 INFO  : 'configparams force-mem-access 1' command is executed.
+11:20:05 INFO  : Context for 'APU' is selected.
+11:20:05 INFO  : 'stop' command is executed.
+11:20:05 INFO  : 'ps7_init' command is executed.
+11:20:05 INFO  : 'ps7_post_config' command is executed.
+11:20:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:20:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:06 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:20:06 INFO  : 'configparams force-mem-access 0' command is executed.
+11:20:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:20:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:06 INFO  : 'con' command is executed.
+11:20:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:20:06 INFO  : Disconnected from the channel tcfchan#2.
+11:23:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:23:44 INFO  : 'fpga -state' command is executed.
+11:23:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:23:45 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:23:45 INFO  : 'jtag frequency' command is executed.
+11:23:45 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:23:45 INFO  : Context for 'APU' is selected.
+11:23:46 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+11:23:46 INFO  : 'configparams force-mem-access 1' command is executed.
+11:23:46 INFO  : Context for 'APU' is selected.
+11:23:46 INFO  : 'stop' command is executed.
+11:23:47 INFO  : 'ps7_init' command is executed.
+11:23:47 INFO  : 'ps7_post_config' command is executed.
+11:23:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:47 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:23:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:47 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:23:47 INFO  : 'configparams force-mem-access 0' command is executed.
+11:23:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:23:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:23:47 INFO  : 'con' command is executed.
+11:23:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:23:47 INFO  : Disconnected from the channel tcfchan#3.
+11:49:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:49:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:49:26 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+11:49:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+11:49:36 INFO  : 'fpga -state' command is executed.
+11:49:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:49:36 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:49:36 INFO  : 'jtag frequency' command is executed.
+11:49:36 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+11:49:36 INFO  : Context for 'APU' is selected.
+11:49:36 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+11:49:36 INFO  : 'configparams force-mem-access 1' command is executed.
+11:49:36 INFO  : Context for 'APU' is selected.
+11:49:36 INFO  : 'stop' command is executed.
+11:49:36 INFO  : 'ps7_init' command is executed.
+11:49:36 INFO  : 'ps7_post_config' command is executed.
+11:49:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+11:49:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:37 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:49:37 INFO  : 'configparams force-mem-access 0' command is executed.
+11:49:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:49:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:49:37 INFO  : 'con' command is executed.
+11:49:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+11:49:37 INFO  : Disconnected from the channel tcfchan#4.
+15:16:49 INFO  : Registering command handlers for SDK TCF services
+15:16:50 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+15:16:53 INFO  : XSCT server has started successfully.
+15:16:53 INFO  : Successfully done setting XSCT server connection channel  
+15:16:56 INFO  : Successfully done setting SDK workspace  
+15:16:56 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+15:16:56 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+17:22:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+17:22:28 INFO  : 'fpga -state' command is executed.
+17:22:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:22:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+17:22:37 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+17:22:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+17:22:43 INFO  : 'fpga -state' command is executed.
+17:22:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:22:43 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+17:22:43 INFO  : 'jtag frequency' command is executed.
+17:22:43 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:22:43 INFO  : Context for 'APU' is selected.
+17:22:43 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+17:22:43 INFO  : 'configparams force-mem-access 1' command is executed.
+17:22:43 INFO  : Context for 'APU' is selected.
+17:22:43 INFO  : 'stop' command is executed.
+17:22:44 INFO  : 'ps7_init' command is executed.
+17:22:44 INFO  : 'ps7_post_config' command is executed.
+17:22:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:22:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+17:22:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:22:44 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:22:44 INFO  : 'configparams force-mem-access 0' command is executed.
+17:22:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:22:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:22:44 INFO  : 'con' command is executed.
+17:22:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+17:22:44 INFO  : Disconnected from the channel tcfchan#1.
+18:28:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:28:46 INFO  : 'fpga -state' command is executed.
+18:28:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:28:46 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:28:46 INFO  : 'jtag frequency' command is executed.
+18:28:46 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:28:46 INFO  : Context for 'APU' is selected.
+18:28:48 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:28:48 INFO  : 'configparams force-mem-access 1' command is executed.
+18:28:48 INFO  : Context for 'APU' is selected.
+18:28:48 INFO  : 'stop' command is executed.
+18:28:48 INFO  : 'ps7_init' command is executed.
+18:28:48 INFO  : 'ps7_post_config' command is executed.
+18:28:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:28:48 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:28:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:28:49 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:28:49 INFO  : 'configparams force-mem-access 0' command is executed.
+18:28:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:28:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:28:49 INFO  : 'con' command is executed.
+18:28:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:28:49 INFO  : Disconnected from the channel tcfchan#2.
+18:30:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:30:19 INFO  : 'fpga -state' command is executed.
+18:30:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:30:19 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:30:20 INFO  : 'jtag frequency' command is executed.
+18:30:20 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:30:20 INFO  : Context for 'APU' is selected.
+18:30:21 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:30:21 INFO  : 'configparams force-mem-access 1' command is executed.
+18:30:21 INFO  : Context for 'APU' is selected.
+18:30:21 INFO  : 'stop' command is executed.
+18:30:22 INFO  : 'ps7_init' command is executed.
+18:30:22 INFO  : 'ps7_post_config' command is executed.
+18:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:30:22 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:30:22 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:30:22 INFO  : 'configparams force-mem-access 0' command is executed.
+18:30:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:30:22 INFO  : 'con' command is executed.
+18:30:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:30:22 INFO  : Disconnected from the channel tcfchan#3.
+18:30:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:30:49 INFO  : 'fpga -state' command is executed.
+18:31:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:31:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:31:17 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+18:31:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:31:32 INFO  : 'fpga -state' command is executed.
+18:31:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:31:32 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:31:32 INFO  : 'jtag frequency' command is executed.
+18:31:32 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:31:32 INFO  : Context for 'APU' is selected.
+18:31:32 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:31:32 INFO  : 'configparams force-mem-access 1' command is executed.
+18:31:32 INFO  : Context for 'APU' is selected.
+18:31:32 INFO  : 'stop' command is executed.
+18:31:32 INFO  : 'ps7_init' command is executed.
+18:31:32 INFO  : 'ps7_post_config' command is executed.
+18:31:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:31:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:33 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:31:33 INFO  : 'configparams force-mem-access 0' command is executed.
+18:31:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:31:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:33 INFO  : 'con' command is executed.
+18:31:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:31:33 INFO  : Disconnected from the channel tcfchan#4.
+18:33:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:33:27 INFO  : 'fpga -state' command is executed.
+18:33:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:27 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:33:27 INFO  : 'jtag frequency' command is executed.
+18:33:27 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:33:27 INFO  : Context for 'APU' is selected.
+18:33:29 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:33:29 INFO  : 'configparams force-mem-access 1' command is executed.
+18:33:29 INFO  : Context for 'APU' is selected.
+18:33:29 INFO  : 'stop' command is executed.
+18:33:29 INFO  : 'ps7_init' command is executed.
+18:33:29 INFO  : 'ps7_post_config' command is executed.
+18:33:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:29 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:33:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:29 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:33:29 INFO  : 'configparams force-mem-access 0' command is executed.
+18:33:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:33:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:30 INFO  : 'con' command is executed.
+18:33:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:33:30 INFO  : Disconnected from the channel tcfchan#5.
+18:35:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:35:35 INFO  : 'fpga -state' command is executed.
+18:35:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:35:36 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:35:36 INFO  : 'jtag frequency' command is executed.
+18:35:36 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:35:36 INFO  : Context for 'APU' is selected.
+18:35:37 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:35:37 INFO  : 'configparams force-mem-access 1' command is executed.
+18:35:37 INFO  : Context for 'APU' is selected.
+18:35:37 INFO  : 'stop' command is executed.
+18:35:37 INFO  : 'ps7_init' command is executed.
+18:35:38 INFO  : 'ps7_post_config' command is executed.
+18:35:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:35:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:35:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:35:38 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:35:38 INFO  : 'configparams force-mem-access 0' command is executed.
+18:35:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:35:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:35:38 INFO  : 'con' command is executed.
+18:35:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:35:38 INFO  : Disconnected from the channel tcfchan#6.
+18:44:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:44:57 INFO  : 'fpga -state' command is executed.
+18:44:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:44:57 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:44:57 INFO  : 'jtag frequency' command is executed.
+18:44:57 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:44:57 INFO  : Context for 'APU' is selected.
+18:44:59 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:44:59 INFO  : 'configparams force-mem-access 1' command is executed.
+18:44:59 INFO  : Context for 'APU' is selected.
+18:44:59 INFO  : 'stop' command is executed.
+18:44:59 INFO  : 'ps7_init' command is executed.
+18:44:59 INFO  : 'ps7_post_config' command is executed.
+18:44:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:44:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:44:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:00 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:45:00 INFO  : 'configparams force-mem-access 0' command is executed.
+18:45:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:45:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:00 INFO  : 'con' command is executed.
+18:45:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:45:00 INFO  : Disconnected from the channel tcfchan#7.
+18:46:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+18:46:05 INFO  : 'fpga -state' command is executed.
+18:46:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:46:06 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+18:46:06 INFO  : 'jtag frequency' command is executed.
+18:46:06 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:46:06 INFO  : Context for 'APU' is selected.
+18:46:07 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+18:46:07 INFO  : 'configparams force-mem-access 1' command is executed.
+18:46:07 INFO  : Context for 'APU' is selected.
+18:46:07 INFO  : 'stop' command is executed.
+18:46:08 INFO  : 'ps7_init' command is executed.
+18:46:08 INFO  : 'ps7_post_config' command is executed.
+18:46:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:08 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:46:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:08 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:46:08 INFO  : 'configparams force-mem-access 0' command is executed.
+18:46:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:46:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:08 INFO  : 'con' command is executed.
+18:46:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+18:46:08 INFO  : Disconnected from the channel tcfchan#8.
+22:01:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:01:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:01:08 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+22:30:18 INFO  : Registering command handlers for SDK TCF services
+22:30:19 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+22:30:22 INFO  : XSCT server has started successfully.
+22:30:22 INFO  : Successfully done setting XSCT server connection channel  
+22:30:22 INFO  : Successfully done setting SDK workspace  
+22:30:22 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+22:30:22 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+22:38:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:38:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:38:16 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+22:38:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:38:22 INFO  : 'fpga -state' command is executed.
+22:38:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:38:23 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:38:23 INFO  : 'jtag frequency' command is executed.
+22:38:23 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:38:23 INFO  : Context for 'APU' is selected.
+22:38:23 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:38:23 INFO  : 'configparams force-mem-access 1' command is executed.
+22:38:23 INFO  : Context for 'APU' is selected.
+22:38:23 INFO  : 'stop' command is executed.
+22:38:23 INFO  : 'ps7_init' command is executed.
+22:38:23 INFO  : 'ps7_post_config' command is executed.
+22:38:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:38:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:38:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:38:23 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:38:23 INFO  : 'configparams force-mem-access 0' command is executed.
+22:38:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:38:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:38:24 INFO  : 'con' command is executed.
+22:38:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:38:24 INFO  : Disconnected from the channel tcfchan#1.
+22:39:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:39:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:39:18 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+22:39:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:39:25 INFO  : 'fpga -state' command is executed.
+22:39:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:39:25 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:39:25 INFO  : 'jtag frequency' command is executed.
+22:39:25 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:39:25 INFO  : Context for 'APU' is selected.
+22:39:25 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:39:25 INFO  : 'configparams force-mem-access 1' command is executed.
+22:39:25 INFO  : Context for 'APU' is selected.
+22:39:25 INFO  : 'stop' command is executed.
+22:39:26 INFO  : 'ps7_init' command is executed.
+22:39:26 INFO  : 'ps7_post_config' command is executed.
+22:39:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:39:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:39:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:39:26 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:39:26 INFO  : 'configparams force-mem-access 0' command is executed.
+22:39:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:39:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:39:26 INFO  : 'con' command is executed.
+22:39:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:39:26 INFO  : Disconnected from the channel tcfchan#2.
+22:41:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:41:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:41:48 INFO  : FPGA configured successfully with bitstream "C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/sokoban_wrapper.bit"
+22:41:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:41:52 INFO  : 'fpga -state' command is executed.
+22:41:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:41:52 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:41:52 INFO  : 'jtag frequency' command is executed.
+22:41:52 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:41:52 INFO  : Context for 'APU' is selected.
+22:41:52 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:41:52 INFO  : 'configparams force-mem-access 1' command is executed.
+22:41:52 INFO  : Context for 'APU' is selected.
+22:41:53 INFO  : 'stop' command is executed.
+22:41:53 INFO  : 'ps7_init' command is executed.
+22:41:53 INFO  : 'ps7_post_config' command is executed.
+22:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:53 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:53 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:41:53 INFO  : 'configparams force-mem-access 0' command is executed.
+22:41:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:41:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:53 INFO  : 'con' command is executed.
+22:41:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:41:53 INFO  : Disconnected from the channel tcfchan#3.
+22:42:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:42:38 INFO  : 'fpga -state' command is executed.
+22:42:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:42:38 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:42:38 INFO  : 'jtag frequency' command is executed.
+22:42:38 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:42:39 INFO  : Context for 'APU' is selected.
+22:42:40 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:42:40 INFO  : 'configparams force-mem-access 1' command is executed.
+22:42:40 INFO  : Context for 'APU' is selected.
+22:42:40 INFO  : 'stop' command is executed.
+22:42:40 INFO  : 'ps7_init' command is executed.
+22:42:40 INFO  : 'ps7_post_config' command is executed.
+22:42:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:42:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:42:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:42:41 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:42:41 INFO  : 'configparams force-mem-access 0' command is executed.
+22:42:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:42:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:42:41 INFO  : 'con' command is executed.
+22:42:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:42:41 INFO  : Disconnected from the channel tcfchan#4.
+22:43:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:43:03 INFO  : 'fpga -state' command is executed.
+22:43:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:43:03 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:43:03 INFO  : 'jtag frequency' command is executed.
+22:43:03 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:43:03 INFO  : Context for 'APU' is selected.
+22:43:04 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:43:04 INFO  : 'configparams force-mem-access 1' command is executed.
+22:43:04 INFO  : Context for 'APU' is selected.
+22:43:04 INFO  : 'stop' command is executed.
+22:43:05 INFO  : 'ps7_init' command is executed.
+22:43:05 INFO  : 'ps7_post_config' command is executed.
+22:43:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:43:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:43:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:43:05 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:43:05 INFO  : 'configparams force-mem-access 0' command is executed.
+22:43:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:43:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:43:05 INFO  : 'con' command is executed.
+22:43:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:43:05 INFO  : Disconnected from the channel tcfchan#5.
+22:44:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:44:36 INFO  : 'fpga -state' command is executed.
+22:44:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:44:36 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:44:36 INFO  : 'jtag frequency' command is executed.
+22:44:36 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:44:36 INFO  : Context for 'APU' is selected.
+22:44:37 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:44:37 INFO  : 'configparams force-mem-access 1' command is executed.
+22:44:37 INFO  : Context for 'APU' is selected.
+22:44:38 INFO  : 'stop' command is executed.
+22:44:38 INFO  : 'ps7_init' command is executed.
+22:44:38 INFO  : 'ps7_post_config' command is executed.
+22:44:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:44:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:44:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:44:38 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:44:38 INFO  : 'configparams force-mem-access 0' command is executed.
+22:44:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:44:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:44:38 INFO  : 'con' command is executed.
+22:44:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:44:38 INFO  : Disconnected from the channel tcfchan#6.
+22:45:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:45:23 INFO  : 'fpga -state' command is executed.
+22:45:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:45:23 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:45:23 INFO  : 'jtag frequency' command is executed.
+22:45:23 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:45:23 INFO  : Context for 'APU' is selected.
+22:45:25 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:45:25 INFO  : 'configparams force-mem-access 1' command is executed.
+22:45:25 INFO  : Context for 'APU' is selected.
+22:45:25 INFO  : 'stop' command is executed.
+22:45:25 INFO  : 'ps7_init' command is executed.
+22:45:25 INFO  : 'ps7_post_config' command is executed.
+22:45:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:45:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:45:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:45:25 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:45:25 INFO  : 'configparams force-mem-access 0' command is executed.
+22:45:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:45:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:45:25 INFO  : 'con' command is executed.
+22:45:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:45:25 INFO  : Disconnected from the channel tcfchan#7.
+22:45:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:45:56 INFO  : 'fpga -state' command is executed.
+22:45:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:45:56 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:45:56 INFO  : 'jtag frequency' command is executed.
+22:45:56 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:45:56 INFO  : Context for 'APU' is selected.
+22:45:57 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:45:57 INFO  : 'configparams force-mem-access 1' command is executed.
+22:45:57 INFO  : Context for 'APU' is selected.
+22:45:57 INFO  : 'stop' command is executed.
+22:45:58 INFO  : 'ps7_init' command is executed.
+22:45:58 INFO  : 'ps7_post_config' command is executed.
+22:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:45:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:45:58 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:45:58 INFO  : 'configparams force-mem-access 0' command is executed.
+22:45:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:45:58 INFO  : 'con' command is executed.
+22:45:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:45:58 INFO  : Disconnected from the channel tcfchan#8.
+22:47:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:47:25 INFO  : 'fpga -state' command is executed.
+22:47:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:47:25 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:47:25 INFO  : 'jtag frequency' command is executed.
+22:47:25 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:47:25 INFO  : Context for 'APU' is selected.
+22:47:27 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:47:27 INFO  : 'configparams force-mem-access 1' command is executed.
+22:47:27 INFO  : Context for 'APU' is selected.
+22:47:27 INFO  : 'stop' command is executed.
+22:47:27 INFO  : 'ps7_init' command is executed.
+22:47:27 INFO  : 'ps7_post_config' command is executed.
+22:47:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:27 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:47:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:27 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:47:27 INFO  : 'configparams force-mem-access 0' command is executed.
+22:47:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:47:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:27 INFO  : 'con' command is executed.
+22:47:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:47:27 INFO  : Disconnected from the channel tcfchan#9.
+22:47:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:47:33 INFO  : 'fpga -state' command is executed.
+22:47:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:47:33 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:47:33 INFO  : 'jtag frequency' command is executed.
+22:47:33 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:47:33 INFO  : Context for 'APU' is selected.
+22:47:35 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:47:35 INFO  : 'configparams force-mem-access 1' command is executed.
+22:47:35 INFO  : Context for 'APU' is selected.
+22:47:35 INFO  : 'stop' command is executed.
+22:47:35 INFO  : 'ps7_init' command is executed.
+22:47:35 INFO  : 'ps7_post_config' command is executed.
+22:47:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:35 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:47:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:35 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:47:35 INFO  : 'configparams force-mem-access 0' command is executed.
+22:47:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:47:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:35 INFO  : 'con' command is executed.
+22:47:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:47:35 INFO  : Disconnected from the channel tcfchan#10.
+22:47:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:47:55 INFO  : 'fpga -state' command is executed.
+22:47:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:47:55 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:47:55 INFO  : 'jtag frequency' command is executed.
+22:47:55 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:47:55 INFO  : Context for 'APU' is selected.
+22:47:57 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:47:57 INFO  : 'configparams force-mem-access 1' command is executed.
+22:47:57 INFO  : Context for 'APU' is selected.
+22:47:57 INFO  : 'stop' command is executed.
+22:47:57 INFO  : 'ps7_init' command is executed.
+22:47:57 INFO  : 'ps7_post_config' command is executed.
+22:47:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:47:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:58 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:47:58 INFO  : 'configparams force-mem-access 0' command is executed.
+22:47:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:47:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:47:58 INFO  : 'con' command is executed.
+22:47:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:47:58 INFO  : Disconnected from the channel tcfchan#11.
+22:49:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:49:36 INFO  : 'fpga -state' command is executed.
+22:49:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:49:36 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:49:36 INFO  : 'jtag frequency' command is executed.
+22:49:36 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:49:36 INFO  : Context for 'APU' is selected.
+22:49:37 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:49:37 INFO  : 'configparams force-mem-access 1' command is executed.
+22:49:37 INFO  : Context for 'APU' is selected.
+22:49:37 INFO  : 'stop' command is executed.
+22:49:38 INFO  : 'ps7_init' command is executed.
+22:49:38 INFO  : 'ps7_post_config' command is executed.
+22:49:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:49:38 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:49:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:49:38 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:49:38 INFO  : 'configparams force-mem-access 0' command is executed.
+22:49:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:49:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:49:38 INFO  : 'con' command is executed.
+22:49:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:49:38 INFO  : Disconnected from the channel tcfchan#12.
+22:51:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0} -index 1' command is executed.
+22:51:00 INFO  : 'fpga -state' command is executed.
+22:51:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:51:00 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:51:00 INFO  : 'jtag frequency' command is executed.
+22:51:00 INFO  : Sourcing of 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl' is done.
+22:51:00 INFO  : Context for 'APU' is selected.
+22:51:01 INFO  : Hardware design information is loaded from 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf'.
+22:51:01 INFO  : 'configparams force-mem-access 1' command is executed.
+22:51:01 INFO  : Context for 'APU' is selected.
+22:51:02 INFO  : 'stop' command is executed.
+22:51:02 INFO  : 'ps7_init' command is executed.
+22:51:02 INFO  : 'ps7_post_config' command is executed.
+22:51:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:51:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+22:51:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:51:02 INFO  : The application 'C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:51:02 INFO  : 'configparams force-mem-access 0' command is executed.
+22:51:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+loadhw -hw C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+dow C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/helloworld/Debug/helloworld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:51:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:51:02 INFO  : 'con' command is executed.
+22:51:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Xilinx TUL 1234-tulA"} -index 0
+con
+----------------End of Script----------------
+
+22:51:02 INFO  : Disconnected from the channel tcfchan#13.

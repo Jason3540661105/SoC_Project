@@ -49,18 +49,20 @@
             this.label_info.AutoSize = true;
             this.label_info.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label_info.ForeColor = System.Drawing.Color.Red;
-            this.label_info.Location = new System.Drawing.Point(507, 458);
+            this.label_info.Location = new System.Drawing.Point(676, 572);
+            this.label_info.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_info.Name = "label_info";
-            this.label_info.Size = new System.Drawing.Size(0, 27);
+            this.label_info.Size = new System.Drawing.Size(0, 34);
             this.label_info.TabIndex = 200;
             // 
             // button1
             // 
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("新細明體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(231, 249);
+            this.button1.Location = new System.Drawing.Point(308, 311);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 57);
+            this.button1.Size = new System.Drawing.Size(220, 71);
             this.button1.TabIndex = 201;
             this.button1.TabStop = false;
             this.button1.Text = "New Game";
@@ -72,9 +74,10 @@
             // 
             this.label213.AutoSize = true;
             this.label213.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label213.Location = new System.Drawing.Point(520, 179);
+            this.label213.Location = new System.Drawing.Point(693, 224);
+            this.label213.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label213.Name = "label213";
-            this.label213.Size = new System.Drawing.Size(50, 22);
+            this.label213.Size = new System.Drawing.Size(61, 27);
             this.label213.TabIndex = 214;
             this.label213.Text = "Next";
             // 
@@ -82,9 +85,10 @@
             // 
             this.label_block_count.AutoSize = true;
             this.label_block_count.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_block_count.Location = new System.Drawing.Point(508, 319);
+            this.label_block_count.Location = new System.Drawing.Point(677, 399);
+            this.label_block_count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_block_count.Name = "label_block_count";
-            this.label_block_count.Size = new System.Drawing.Size(73, 22);
+            this.label_block_count.Size = new System.Drawing.Size(90, 27);
             this.label_block_count.TabIndex = 215;
             this.label_block_count.Text = "Blocks:";
             // 
@@ -92,9 +96,10 @@
             // 
             this.label_score.AutoSize = true;
             this.label_score.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_score.Location = new System.Drawing.Point(510, 359);
+            this.label_score.Location = new System.Drawing.Point(680, 449);
+            this.label_score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_score.Name = "label_score";
-            this.label_score.Size = new System.Drawing.Size(62, 22);
+            this.label_score.Size = new System.Drawing.Size(76, 27);
             this.label_score.TabIndex = 216;
             this.label_score.Text = "Score:";
             // 
@@ -102,25 +107,28 @@
             // 
             this.label_level.AutoSize = true;
             this.label_level.Font = new System.Drawing.Font("新細明體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_level.Location = new System.Drawing.Point(510, 399);
+            this.label_level.Location = new System.Drawing.Point(680, 499);
+            this.label_level.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_level.Name = "label_level";
-            this.label_level.Size = new System.Drawing.Size(63, 22);
+            this.label_level.Size = new System.Drawing.Size(77, 27);
             this.label_level.TabIndex = 217;
             this.label_level.Text = "Level:";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 652);
+            this.ClientSize = new System.Drawing.Size(929, 815);
             this.Controls.Add(this.label_level);
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.label_block_count);
             this.Controls.Add(this.label213);
             this.Controls.Add(this.label_info);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "xblocks";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.ResumeLayout(false);

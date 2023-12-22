@@ -914,5 +914,10 @@ namespace xblocks
                 timer1.Interval = timer_interval;
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
