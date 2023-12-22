@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Fri Dec 08 15:25:16 UTC 2023
-VLNV: xilinx.com:ip:axi_uart16550:2.0
-SynthRuntime: 36

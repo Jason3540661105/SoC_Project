@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;helloworld/src/sokoban.c&apos;" deleteContents="false" description="Delete resource &apos;helloworld/src/sokoban.c&apos;" element1="/helloworld/src/sokoban.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1702978227799"/>&#x0A;<refactoring comment="Delete resource &apos;helloworld/src/sokoban.h&apos;" deleteContents="false" description="Delete resource &apos;helloworld/src/sokoban.h&apos;" element1="/helloworld/src/sokoban.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1703056618549"/>
-</session>
