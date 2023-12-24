@@ -2,16 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value=" Person_X" key="selection"/>
+		<item value="Uart_SendData" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value=" Person_X"/>
-			<item value=" Person_X  "/>
-			<item value="Person_X "/>
-			<item value="rema"/>
+			<item value="Uart_SendData"/>
+			<item value=" printf("/>
+			<item value="printf("/>
+			<item value="Uart_SendData_test"/>
+			<item value="printf"/>
+			<item value="MapTo"/>
+			<item value="Judge_Game_State"/>
+			<item value="5"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -20,7 +24,7 @@
 		<item value="344" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft JhengHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft JhengHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="442" key="DIALOG_HEIGHT"/>
-		<item value="1676" key="DIALOG_X_ORIGIN"/>
-		<item value="351" key="DIALOG_Y_ORIGIN"/>
+		<item value="1806" key="DIALOG_X_ORIGIN"/>
+		<item value="165" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

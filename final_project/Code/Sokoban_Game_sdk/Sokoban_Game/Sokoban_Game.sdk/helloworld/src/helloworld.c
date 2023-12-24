@@ -101,7 +101,8 @@ XScuGic INTCInst;															//宣告INTCInst為XScuGic的結構
 /*static : 限定函示只能在該文件使用，不能被其他程式調用*/
 //1. UART-Send Data-Partial
 static int	Uart_Init(void);
-static int	Uart_SendData_test(void *InstancePtr);
+static int	Uart_SendData(void *InstancePtr);
+//static int	Uart_SendData_test(void *InstancePtr);
 
 //2. Button-interrupt-partial
 static int 	InterruptSystemSetup(XScuGic *XScuGicInstancePtr);
@@ -138,8 +139,8 @@ int main()
     	return XST_FAILURE;													//失敗就結束程式
 	}
     else{
-    	printf("Uart Initialization Successful!\n");
-    	Uart_SendData_test(&Uart_PS_1);										//UART 初始化成功後自動傳輸一次 UART 資料
+    	//printf("Uart Initialization Successful!\n");
+    	Uart_SendData(&Uart_PS_1);										//UART 初始化成功後自動傳輸一次 UART 資料
 	}
 
     //初始化中斷控制器
@@ -152,28 +153,26 @@ int main()
 
     while(1){
     	if(isWinner(map)){													//自訂布林函式判斷是否通關 (當前地圖)
-    		printf("Winner!\n");
-    		printf("Do you wnat to play again?\n");
+    		//printf("Winner!\n");
+    		//printf("Do you wnat to play again?\n");
     		if(btn_value == 0)
     		    break;
     	}
     	else{
     		//判斷遊戲狀態
     		Judge_Game_State(&Sokoban_Game_State, map);								//自訂函式(遊戲狀態, 當前地圖)
-    		printf("Sokoban_Game_State is [%d]\n", Sokoban_Game_State);
+    		//printf("Sokoban_Game_State is [%d]\n", Sokoban_Game_State);
 
     		//LED顯示剩餘擺放目的地數量
-    		//Remaining_Destinations_led = Remaining_Destinations(map);				//使用二維地圖
-    		//Remaining_Destinations_led = Remaining_Destinations(TransmitBuffer);	//使用一維地圖
-
-    		Remaining_Box(&Remaining_Destinations_led, map);				//自訂函式(剩餘目的地數量, 當前地圖)
+    		Remaining_Box(&Remaining_Destinations_led, map);						//自訂函式(剩餘目的地數量, 當前地圖)
     		XGpio_DiscreteWrite(&LED_XGpio, 1, Remaining_Destinations_led);			//將LED的資料寫進指定的GPIO通道的暫存器裡	(XGpio的實例, GPIO的通道, 要寫入暫存器的資料)
-    		printf("Remaining_Destinations_led = [%d]\n", Remaining_Destinations_led);
+    		//printf("Remaining_Destinations_led = [%d]\n", Remaining_Destinations_led);
 
     		//尋找人物座標
     		Find_Person_Coordinates(&Person_X, &Person_Y, map);						//自訂函式(X軸, Y軸)
-    		printf("Person Coordinate is X[%d] Y[%d]\n", Person_X, Person_Y);
-    		usleep(500000);
+    		//printf("Person Coordinate is X[%d] Y[%d]\n", Person_X, Person_Y);
+
+    		//usleep(500000);
     	}
     }
 
@@ -218,8 +217,8 @@ int Uart_Init(void){
 }
 
 //1.2 UART-Send-Data
-int Uart_SendData_test(void *InstancePtr){
-	MapToArray_c(TransmitBuffer, map, Sokoban_Game_State);
+int Uart_SendData(void *InstancePtr){
+	MapToArray(TransmitBuffer, map, Sokoban_Game_State);
 	//MapToArray_c(TransmitBuffer, init_map, Sokoban_Game_State);
 	//Print_Map_Data(TransmitBuffer);
 
@@ -228,9 +227,25 @@ int Uart_SendData_test(void *InstancePtr){
 			TotalByteSend += ByteSend;
 	}
 	TotalByteSend = 0;
-	printf("\n");
+	//printf("\n");
+
 	return TotalByteSend;
 }
+
+//int Uart_SendData_test(void *InstancePtr){
+	//MapToArray(TransmitBuffer, map, Sokoban_Game_State);
+	//MapToArray_c(TransmitBuffer, init_map, Sokoban_Game_State);
+	//Print_Map_Data(TransmitBuffer);
+
+	//while (TotalByteSend < (sizeof(TransmitBuffer))) {
+	//		ByteSend = XUartPs_Send(&Uart_PS_1,(u8*)&TransmitBuffer[TotalByteSend], 1);
+	//		TotalByteSend += ByteSend;
+	//}
+	//TotalByteSend = 0;
+	//printf("\n");
+
+	//return TotalByteSend;
+//}
 
 //----------------------------------------------------
 // 2. Button-Interrupt-Partial
@@ -304,9 +319,9 @@ void BTN_Intr_Handler(void *InstancePtr){
 				if(Sokoban_Game_State == 0){
 					Move_Up(map, Person_X, Person_Y);
 					Judge_Game_State(&Sokoban_Game_State, map);
-					Uart_SendData_test(&Uart_PS_1);
-					printf("\nMove UP : %d\n",btn_value);
-					usleep(250000);
+					Uart_SendData(&Uart_PS_1);
+					//printf("\nMove UP : %d\n",btn_value);
+					usleep(200000);
 				}
 				else
 					Initial_Map(map, init_map);
@@ -316,9 +331,9 @@ void BTN_Intr_Handler(void *InstancePtr){
 				if(Sokoban_Game_State == 0){
 					Move_Down(map, Person_X, Person_Y);
 					Judge_Game_State(&Sokoban_Game_State, map);
-					Uart_SendData_test(&Uart_PS_1);
-					printf("\nMove Down : %d\n",btn_value);
-					usleep(250000);
+					Uart_SendData(&Uart_PS_1);
+					//printf("\nMove Down : %d\n",btn_value);
+					usleep(200000);
 				}
 				else
 					Initial_Map(map, init_map);
@@ -328,9 +343,9 @@ void BTN_Intr_Handler(void *InstancePtr){
 				if(Sokoban_Game_State == 0){
 					Move_Left(map, Person_X, Person_Y);
 					Judge_Game_State(&Sokoban_Game_State, map);
-					Uart_SendData_test(&Uart_PS_1);
-					printf("\nMove Left : %d\n",btn_value);
-					usleep(250000);
+					Uart_SendData(&Uart_PS_1);
+					//printf("\nMove Left : %d\n",btn_value);
+					usleep(200000);
 				}
 				else
 					Initial_Map(map, init_map);
@@ -340,9 +355,9 @@ void BTN_Intr_Handler(void *InstancePtr){
 				if(Sokoban_Game_State == 0){
 					Move_Right(map, Person_X, Person_Y);
 					Judge_Game_State(&Sokoban_Game_State, map);
-					Uart_SendData_test(&Uart_PS_1);
-					printf("\nMove Right : %d\n",btn_value);
-					usleep(250000);
+					Uart_SendData(&Uart_PS_1);
+					//printf("\nMove Right : %d\n",btn_value);
+					usleep(200000);
 				}
 				else
 					Initial_Map(map, init_map);
@@ -352,15 +367,15 @@ void BTN_Intr_Handler(void *InstancePtr){
 				if(Sokoban_Game_State == 0){
 					Game_Reset(map, init_map);
 					Judge_Game_State(&Sokoban_Game_State, map);
-					Uart_SendData_test(&Uart_PS_1);
-					printf("\nReset Game : %d\n",btn_value);
-					usleep(250000);
+					Uart_SendData(&Uart_PS_1);
+					//printf("\nReset Game : %d\n",btn_value);
+					usleep(200000);
 				}
 				else{
-				    printf("\ngame over\n");
+				    //printf("\ngame over\n");
 					break;
 				}
-			}
+			}break;
 
 			default:{
 				printf("Error : Unknown btn_value\n");

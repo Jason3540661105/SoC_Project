@@ -35,13 +35,12 @@
             this.SerialPortSelect = new System.Windows.Forms.ComboBox();
             this.uart_richTextBox_test = new System.Windows.Forms.RichTextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.uart_textBox_test = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // SerialPortConnect
             // 
             this.SerialPortConnect.Font = new System.Drawing.Font("新細明體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SerialPortConnect.Location = new System.Drawing.Point(336, 22);
+            this.SerialPortConnect.Location = new System.Drawing.Point(712, 144);
             this.SerialPortConnect.Name = "SerialPortConnect";
             this.SerialPortConnect.Size = new System.Drawing.Size(153, 72);
             this.SerialPortConnect.TabIndex = 0;
@@ -52,7 +51,7 @@
             // SerialPortDisconnect
             // 
             this.SerialPortDisconnect.Font = new System.Drawing.Font("新細明體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SerialPortDisconnect.Location = new System.Drawing.Point(539, 22);
+            this.SerialPortDisconnect.Location = new System.Drawing.Point(712, 255);
             this.SerialPortDisconnect.Name = "SerialPortDisconnect";
             this.SerialPortDisconnect.Size = new System.Drawing.Size(153, 72);
             this.SerialPortDisconnect.TabIndex = 1;
@@ -64,7 +63,7 @@
             // 
             this.comport_label.AutoSize = true;
             this.comport_label.Font = new System.Drawing.Font("新細明體", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.comport_label.Location = new System.Drawing.Point(29, 47);
+            this.comport_label.Location = new System.Drawing.Point(720, 32);
             this.comport_label.Name = "comport_label";
             this.comport_label.Size = new System.Drawing.Size(128, 23);
             this.comport_label.TabIndex = 2;
@@ -73,7 +72,7 @@
             // SerialPortSelect
             // 
             this.SerialPortSelect.FormattingEnabled = true;
-            this.SerialPortSelect.Location = new System.Drawing.Point(180, 47);
+            this.SerialPortSelect.Location = new System.Drawing.Point(727, 79);
             this.SerialPortSelect.Name = "SerialPortSelect";
             this.SerialPortSelect.Size = new System.Drawing.Size(121, 23);
             this.SerialPortSelect.TabIndex = 3;
@@ -81,25 +80,18 @@
             // 
             // uart_richTextBox_test
             // 
-            this.uart_richTextBox_test.Location = new System.Drawing.Point(33, 114);
+            this.uart_richTextBox_test.Location = new System.Drawing.Point(78, 416);
             this.uart_richTextBox_test.Name = "uart_richTextBox_test";
-            this.uart_richTextBox_test.Size = new System.Drawing.Size(659, 192);
+            this.uart_richTextBox_test.Size = new System.Drawing.Size(704, 48);
             this.uart_richTextBox_test.TabIndex = 4;
             this.uart_richTextBox_test.Text = "";
-            // 
-            // uart_textBox_test
-            // 
-            this.uart_textBox_test.Location = new System.Drawing.Point(33, 329);
-            this.uart_textBox_test.Name = "uart_textBox_test";
-            this.uart_textBox_test.Size = new System.Drawing.Size(659, 25);
-            this.uart_textBox_test.TabIndex = 5;
+            this.uart_richTextBox_test.TextChanged += new System.EventHandler(this.uart_richTextBox_test_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 366);
-            this.Controls.Add(this.uart_textBox_test);
+            this.ClientSize = new System.Drawing.Size(877, 516);
             this.Controls.Add(this.uart_richTextBox_test);
             this.Controls.Add(this.SerialPortSelect);
             this.Controls.Add(this.comport_label);
@@ -121,7 +113,6 @@
         private System.Windows.Forms.ComboBox SerialPortSelect;
         private System.Windows.Forms.RichTextBox uart_richTextBox_test;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.TextBox uart_textBox_test;
     }
 }
 
