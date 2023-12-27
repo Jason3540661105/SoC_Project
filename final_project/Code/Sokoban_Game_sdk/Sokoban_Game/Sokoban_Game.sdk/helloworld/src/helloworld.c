@@ -75,7 +75,7 @@ volatile static u32 ByteSend = 0 , TotalByteSend = 0;
 
 static int Sokoban_Game_State = 0;											//未結束:0   結束:1
 static int map[Map1_HEIGHT][Map1_WIDTH]= {0};								//存放地圖陣列資料的資料
-static int Remaining_Destinations_led;										//顯示剩餘目的地數量的led
+static int Remaining_Box_led;										//顯示剩餘目的地數量的led
 static int led_data;														//顯示剩餘目的地數量的led
 static int btn_value;
 static u8 TransmitBuffer[Map1_HEIGHT * Map1_WIDTH + 1] = {0};				//儲存轉換後[map的一維陣列]+[判斷遊戲是否結束]，共有:73bits
@@ -157,9 +157,9 @@ int main()
     		//printf("Sokoban_Game_State is [%d]\n", Sokoban_Game_State);
 
     		//LED顯示剩餘擺放目的地數量
-    		Remaining_Box(&Remaining_Destinations_led, map);						//自訂函式(剩餘目的地數量, 當前地圖)
-    		XGpio_DiscreteWrite(&LEDInst, 1, Remaining_Destinations_led);			//將LED的資料寫進指定的GPIO通道的暫存器裡	(XGpio的實例, GPIO的通道, 要寫入暫存器的資料)
-    		//printf("Remaining_Destinations_led = [%d]\n", Remaining_Destinations_led);
+    		Remaining_Box(&Remaining_Box_led, map);						//自訂函式(剩餘目的地數量, 當前地圖)
+    		XGpio_DiscreteWrite(&LEDInst, 1, Remaining_Box_led);			//將LED的資料寫進指定的GPIO通道的暫存器裡	(XGpio的實例, GPIO的通道, 要寫入暫存器的資料)
+    		//printf("Remaining_Box_led = [%d]\n", Remaining_Box_led);
 
     		//尋找人物座標
     		Find_Person_Coordinates(&Person_X, &Person_Y, map);						//自訂函式(X軸, Y軸)
@@ -356,10 +356,6 @@ void BTN_Intr_Handler(void *InstancePtr){
 			}break;
 		}
 	}
-	else{
-		led_data = 0;
-	}
-	XGpio_DiscreteWrite(&LEDInst, 1, led_data);
 	(void) XGpio_InterruptClear(&BTNInst, BTN_INT);
 	// Enable GPIO interrupts
 	XGpio_InterruptEnable(&BTNInst, BTN_INT);
