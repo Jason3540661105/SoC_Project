@@ -60,8 +60,6 @@ void Initial_Map(int Map_data[Map1_HEIGHT][Map1_WIDTH], int init_map[Map1_HEIGHT
 void MapToArray(u8 *byteArray, int Map_data[Map1_HEIGHT][Map1_WIDTH], int Game_State);
 
 //計算目的地剩餘數量
-//int Remaining_Destinations(u8 *Map_data); //1
-//int Remaining_Destinations(int Map_data[Map1_HEIGHT][Map1_WIDTH]);//2
 void Remaining_Box(int *Remaining_Destinations_Total, int Map_data[Map1_HEIGHT][Map1_WIDTH]);
 
 //判斷遊戲是否勝利 -1(轉換過的map) 2(未轉換過的map)
@@ -88,5 +86,6 @@ void Move_Right(int Map_Update[Map1_HEIGHT][Map1_WIDTH], int Person_X, int Perso
 
 //按鈕功能->重製遊戲地圖和遊戲狀態
 void Game_Reset(int Map_data[Map1_HEIGHT][Map1_WIDTH], int init_map[Map1_HEIGHT][Map1_WIDTH]);
+
 //檢查地圖資料
 void Print_Map_Data(u8 *Map_data);

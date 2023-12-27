@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Uart_SendData" key="selection"/>
+		<item value="LEDInst" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="LED_X"/>
+			<item value="LED_Xgpio"/>
+			<item value="LEDInst"/>
+			<item value="LED_XGpio"/>
+			<item value="Judge_Game_State"/>
+			<item value="find_person"/>
 			<item value="Uart_SendData"/>
 			<item value=" printf("/>
-			<item value="printf("/>
-			<item value="Uart_SendData_test"/>
-			<item value="printf"/>
-			<item value="MapTo"/>
-			<item value="Judge_Game_State"/>
-			<item value="5"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -24,7 +24,7 @@
 		<item value="344" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft JhengHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft JhengHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="442" key="DIALOG_HEIGHT"/>
-		<item value="1806" key="DIALOG_X_ORIGIN"/>
-		<item value="165" key="DIALOG_Y_ORIGIN"/>
+		<item value="1882" key="DIALOG_X_ORIGIN"/>
+		<item value="227" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

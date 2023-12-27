@@ -89,7 +89,7 @@ namespace Sokoban_Game
                 SerialPortConnect.Enabled = false;
                 SerialPortDisconnect.Enabled = true;
 
-                SerialPort.DiscardInBuffer();       //可加可不加
+                //SerialPort.DiscardInBuffer();       //可加可不加
 
                 if (SerialPort.IsOpen)
                 {
@@ -190,7 +190,7 @@ namespace Sokoban_Game
                                 break;
                         }
 
-                        //Console.Write($"{ReceiveData[i]}");
+                        Console.Write($"{ReceiveData[i]}");
                         col = col + 1;
                         if (col == COL)
                         {

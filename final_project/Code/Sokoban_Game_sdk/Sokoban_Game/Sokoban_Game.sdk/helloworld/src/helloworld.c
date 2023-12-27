@@ -70,12 +70,8 @@
 #define INTC_GPIO_INTERRUPT_ID 	XPAR_FABRIC_AXI_GPIO_1_IP2INTC_IRPT_INTR	//我猜是[PS]設定的中斷接口
 #define BTN_INT 				XGPIO_IR_CH1_MASK
 
-
-
 //volatile定義 : 每次訪問時從記憶體中重新讀取其值
 volatile static u32 ByteSend = 0 , TotalByteSend = 0;
-//volatile static int map[Map1_HEIGHT][Map1_WIDTH]= {0};						//存放地圖陣列資料的資料
-//volatile static int map_test[Map1_HEIGHT][Map1_WIDTH]= {0};				//存放地圖陣列資料的資料-test
 
 static int Sokoban_Game_State = 0;											//未結束:0   結束:1
 static int map[Map1_HEIGHT][Map1_WIDTH]= {0};								//存放地圖陣列資料的資料
@@ -148,9 +144,6 @@ int main()
     if (status != XST_SUCCESS)												//判斷中斷控制器初始化
     	return XST_FAILURE;													//失敗就結束程式
 
-    XGpio LED_XGpio;														//宣告 LED_XGpio 為 XGpio 的結構
-    XGpio_Initialize(&LED_XGpio, XPAR_AXI_GPIO_0_DEVICE_ID);				//初始化 LED_XGpio 並連接到 AXI_GPIO_0 的設備
-
     while(1){
     	if(isWinner(map)){													//自訂布林函式判斷是否通關 (當前地圖)
     		//printf("Winner!\n");
@@ -165,7 +158,7 @@ int main()
 
     		//LED顯示剩餘擺放目的地數量
     		Remaining_Box(&Remaining_Destinations_led, map);						//自訂函式(剩餘目的地數量, 當前地圖)
-    		XGpio_DiscreteWrite(&LED_XGpio, 1, Remaining_Destinations_led);			//將LED的資料寫進指定的GPIO通道的暫存器裡	(XGpio的實例, GPIO的通道, 要寫入暫存器的資料)
+    		XGpio_DiscreteWrite(&LEDInst, 1, Remaining_Destinations_led);			//將LED的資料寫進指定的GPIO通道的暫存器裡	(XGpio的實例, GPIO的通道, 要寫入暫存器的資料)
     		//printf("Remaining_Destinations_led = [%d]\n", Remaining_Destinations_led);
 
     		//尋找人物座標
@@ -175,7 +168,6 @@ int main()
     		//usleep(500000);
     	}
     }
-
     cleanup_platform();															//關閉快取
     return 0;
 }
@@ -219,7 +211,6 @@ int Uart_Init(void){
 //1.2 UART-Send-Data
 int Uart_SendData(void *InstancePtr){
 	MapToArray(TransmitBuffer, map, Sokoban_Game_State);
-	//MapToArray_c(TransmitBuffer, init_map, Sokoban_Game_State);
 	//Print_Map_Data(TransmitBuffer);
 
 	while (TotalByteSend < (sizeof(TransmitBuffer))) {
@@ -231,21 +222,6 @@ int Uart_SendData(void *InstancePtr){
 
 	return TotalByteSend;
 }
-
-//int Uart_SendData_test(void *InstancePtr){
-	//MapToArray(TransmitBuffer, map, Sokoban_Game_State);
-	//MapToArray_c(TransmitBuffer, init_map, Sokoban_Game_State);
-	//Print_Map_Data(TransmitBuffer);
-
-	//while (TotalByteSend < (sizeof(TransmitBuffer))) {
-	//		ByteSend = XUartPs_Send(&Uart_PS_1,(u8*)&TransmitBuffer[TotalByteSend], 1);
-	//		TotalByteSend += ByteSend;
-	//}
-	//TotalByteSend = 0;
-	//printf("\n");
-
-	//return TotalByteSend;
-//}
 
 //----------------------------------------------------
 // 2. Button-Interrupt-Partial
@@ -262,7 +238,6 @@ int InterruptSystemSetup(XScuGic *XScuGicInstancePtr) {
 			XScuGicInstancePtr);
 	Xil_ExceptionEnable();
 	return XST_SUCCESS;
-
 }
 
 //2.2
@@ -314,7 +289,6 @@ void BTN_Intr_Handler(void *InstancePtr){
 	// Reset if centre button pressed
 	if(btn_value != 1){
 		switch(btn_value){
-
 			case 16:{
 				if(Sokoban_Game_State == 0){
 					Move_Up(map, Person_X, Person_Y);
@@ -390,8 +364,3 @@ void BTN_Intr_Handler(void *InstancePtr){
 	// Enable GPIO interrupts
 	XGpio_InterruptEnable(&BTNInst, BTN_INT);
 }
-
-//----------------------------------------------------
-// 3. Other Function Partial
-//----------------------------------------------------
-
