@@ -218,7 +218,6 @@ int Uart_SendData(void *InstancePtr){
 			TotalByteSend += ByteSend;
 	}
 	TotalByteSend = 0;
-	//printf("\n");
 
 	return TotalByteSend;
 }

@@ -35,6 +35,9 @@
             this.SerialPortSelect = new System.Windows.Forms.ComboBox();
             this.uart_richTextBox_test = new System.Windows.Forms.RichTextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.YLabel = new System.Windows.Forms.Label();
+            this.XLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SerialPortConnect
@@ -87,11 +90,44 @@
             this.uart_richTextBox_test.Text = "";
             this.uart_richTextBox_test.TextChanged += new System.EventHandler(this.uart_richTextBox_test_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("標楷體", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(52, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 22);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "人物座標";
+            // 
+            // YLabel
+            // 
+            this.YLabel.AutoSize = true;
+            this.YLabel.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.YLabel.Location = new System.Drawing.Point(64, 100);
+            this.YLabel.Name = "YLabel";
+            this.YLabel.Size = new System.Drawing.Size(49, 20);
+            this.YLabel.TabIndex = 9;
+            this.YLabel.Text = "Y : ";
+            // 
+            // XLabel
+            // 
+            this.XLabel.AutoSize = true;
+            this.XLabel.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.XLabel.Location = new System.Drawing.Point(64, 69);
+            this.XLabel.Name = "XLabel";
+            this.XLabel.Size = new System.Drawing.Size(49, 20);
+            this.XLabel.TabIndex = 8;
+            this.XLabel.Text = "X : ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 516);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.YLabel);
+            this.Controls.Add(this.XLabel);
             this.Controls.Add(this.uart_richTextBox_test);
             this.Controls.Add(this.SerialPortSelect);
             this.Controls.Add(this.comport_label);
@@ -113,6 +149,9 @@
         private System.Windows.Forms.ComboBox SerialPortSelect;
         private System.Windows.Forms.RichTextBox uart_richTextBox_test;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label YLabel;
+        private System.Windows.Forms.Label XLabel;
     }
 }
 

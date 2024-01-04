@@ -13,6 +13,7 @@ namespace Sokoban_Game
 {
     public partial class Form1 : Form
     {
+        int X = 0, Y = 0;
         const int ROW = 9, COL = 8;                     //ROW是向下生長(高)    //COL是向右生長(寬)
         const int GRID_WIDTH = 30, GRID_HEIGHT = 30;
         const int GAME_POS_X = 200, GAME_POS_Y = 20;
@@ -36,9 +37,9 @@ namespace Sokoban_Game
         Color Person_1      = Color.Beige;
         Color Person_2      = Color.Beige;
         Color Box_On_Target = Color.Green;
-        
-        
 
+
+        //int[,] array = new int[ROW, COL];
         Color[,] GridsColor = new Color[ROW, COL];
         Label[,] grids = new Label[ROW, COL];
 
@@ -179,9 +180,13 @@ namespace Sokoban_Game
                                 break;
                             case 5:
                                 GridsColor[row, col] = Person_1;
+                                X = col;
+                                Y = row;
                                 break;
                             case 8:
                                 GridsColor[row, col] = Person_2;
+                                X = col;
+                                Y = row;
                                 break;
                             case 7:
                                 GridsColor[row, col] = Box_On_Target;
@@ -224,6 +229,8 @@ namespace Sokoban_Game
                 {
                     for (int j = 0; j < COL; j++)
                     {
+                        XLabel.Text = "X : " + X;
+                        YLabel.Text = "Y : " + Y;
                         grids[i, j].BackColor = GridsColor[i, j];
                     }
                 }
