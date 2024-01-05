@@ -157,11 +157,7 @@ namespace Sokoban_Game
                     //    Console.Write($"{ReceiveData[i]}");
                     //}
                     //MessageBox.Show("Game_State_number is"+ Sokoban_Game_State);
-                    if (Sokoban_Game_State == 1)
-                    {
-                        MessageBox.Show("遊戲通關！\n" + "1.重新遊玩遊戲請按「上下左右」的按鈕\n" + "2.想離開遊戲請按「重置」按鈕");
-                        Task.Delay(20);
-                    }
+
                     for (i = 0; i < Map_number; i++)
                     {
                         switch (ReceiveData[i])
@@ -211,6 +207,11 @@ namespace Sokoban_Game
                         }
                     }
                     UpadteScreen();
+                    if (Sokoban_Game_State == 1)
+                    {
+                        MessageBox.Show("遊戲通關！\n" + "1.重新遊玩遊戲請按「上下左右」的按鈕\n" + "2.想離開遊戲請按「重置」按鈕");
+                        Task.Delay(20);
+                    }
                 }
                 else
                 {

@@ -182,11 +182,7 @@ namespace Sokoban_Game
                     //    Console.Write($"{ReceiveData[i]}");
                     //}
                     //MessageBox.Show("Game_State_number is"+ Sokoban_Game_State);
-                    if (Sokoban_Game_State == 1)
-                    {
-                        MessageBox.Show("遊戲通關！\n" + "1.重新遊玩遊戲請按「上下左右」的按鈕\n" + "2.想離開遊戲請按「重置」按鈕");
-                        Task.Delay(20);
-                    }
+                    
                     for (i = 0; i < Map_number; i++)
                     {
                         switch (ReceiveData[i])
@@ -248,7 +244,7 @@ namespace Sokoban_Game
                                 break;
                         }
 
-                        //Console.Write($"{ReceiveData[i]}");
+                        Console.Write($"{ReceiveData[i]}");
                         col = col + 1;
                         if (col == COL)
                         {
@@ -263,37 +259,42 @@ namespace Sokoban_Game
 
                         }
                     }
-                    /*for (int y = 0; y < ROW; y++)
-                    {
-                        for (int x = 0; x < COL; x++)
+                        /*for (int y = 0; y < ROW; y++)
                         {
-                            switch (array[x, y])
+                            for (int x = 0; x < COL; x++)
                             {
-                                case 0:
-                                    this.Controls.Add(new space(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
-                                case 1:
-                                    this.Controls.Add(new wall(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
-                                case 3:
-                                    this.Controls.Add(new target(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
-                                case 4:
-                                    this.Controls.Add(new box(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
-                                case 5:
-                                    this.Controls.Add(new player(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
-                                case 8:
-                                    this.Controls.Add(new player(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
-                                case 7:
-                                    this.Controls.Add(new box_on_target(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
-                                    break;
+                                switch (array[x, y])
+                                {
+                                    case 0:
+                                        this.Controls.Add(new space(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    case 1:
+                                        this.Controls.Add(new wall(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    case 3:
+                                        this.Controls.Add(new target(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    case 4:
+                                        this.Controls.Add(new box(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    case 5:
+                                        this.Controls.Add(new player(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    case 8:
+                                        this.Controls.Add(new player(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    case 7:
+                                        this.Controls.Add(new box_on_target(x * GRID_WIDTH + GAME_POS_X, y * GRID_HEIGHT + GAME_POS_Y));
+                                        break;
+                                    }
                                 }
-                            }
-                         }*/
-                    UpadteScreen();
+                             }*/
+                        UpadteScreen();
+                    if (Sokoban_Game_State == 1)
+                    {
+                        MessageBox.Show("遊戲通關！\n" + "1.重新遊玩遊戲請按「上下左右」的按鈕\n" + "2.想離開遊戲請按「重置」按鈕");
+                        Task.Delay(20);
+                    }
                     //this.Refresh();
                     //System.Threading.Thread.Sleep(100);
                 }
@@ -310,6 +311,38 @@ namespace Sokoban_Game
             //if(grids.InvokeRequired)
             this.Invoke(new EventHandler(delegate
             {
+                // 清除现有的控件
+                foreach (Control control in this.Controls.OfType<space>().ToList())
+                {
+                    this.Controls.Remove(control);
+                    control.Dispose();
+                }
+                foreach (Control control in this.Controls.OfType<wall>().ToList())
+                {
+                    this.Controls.Remove(control);
+                    control.Dispose();
+                }
+                foreach (Control control in this.Controls.OfType<box>().ToList())
+                {
+                    this.Controls.Remove(control);
+                    control.Dispose();
+                }
+                foreach (Control control in this.Controls.OfType<target>().ToList())
+                {
+                    this.Controls.Remove(control);
+                    control.Dispose();
+                }
+                foreach (Control control in this.Controls.OfType<player>().ToList())
+                {
+                    this.Controls.Remove(control);
+                    control.Dispose();
+                }
+                foreach (Control control in this.Controls.OfType<box_on_target>().ToList())
+                {
+                    this.Controls.Remove(control);
+                    control.Dispose();
+                }
+
                 for (int i = 0; i < ROW; i++)
                 {
                     for (int j = 0; j < COL; j++)
@@ -348,12 +381,6 @@ namespace Sokoban_Game
                                     break;
                                 }
                             case 5:
-                                {
-                                    this.Controls.Add(new player(j * GRID_WIDTH + GAME_POS_X, i * GRID_HEIGHT + GAME_POS_Y));
-                                    //this.Refresh();
-                                    //System.Threading.Thread.Sleep(100);
-                                    break;
-                                }
                             case 8:
                                 {
                                     this.Controls.Add(new player(j * GRID_WIDTH + GAME_POS_X, i * GRID_HEIGHT + GAME_POS_Y));
@@ -361,6 +388,13 @@ namespace Sokoban_Game
                                     //System.Threading.Thread.Sleep(100);
                                     break;
                                 }
+                            /*case 8:
+                                {
+                                    this.Controls.Add(new player(j * GRID_WIDTH + GAME_POS_X, i * GRID_HEIGHT + GAME_POS_Y));
+                                    //this.Refresh();
+                                    //System.Threading.Thread.Sleep(100);
+                                    break;
+                                }*/
                             case 7:
                                 {
                                     this.Controls.Add(new box_on_target(j * GRID_WIDTH + GAME_POS_X, i * GRID_HEIGHT + GAME_POS_Y));

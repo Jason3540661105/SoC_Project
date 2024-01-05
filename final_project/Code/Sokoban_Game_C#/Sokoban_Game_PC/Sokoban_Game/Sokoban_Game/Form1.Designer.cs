@@ -83,7 +83,7 @@
             // 
             // uart_richTextBox_test
             // 
-            this.uart_richTextBox_test.Location = new System.Drawing.Point(22, 468);
+            this.uart_richTextBox_test.Location = new System.Drawing.Point(94, 451);
             this.uart_richTextBox_test.Name = "uart_richTextBox_test";
             this.uart_richTextBox_test.Size = new System.Drawing.Size(704, 48);
             this.uart_richTextBox_test.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             this.XLabel.AutoSize = true;
             this.XLabel.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.XLabel.Location = new System.Drawing.Point(44, 59);
+            this.XLabel.Location = new System.Drawing.Point(142, 144);
             this.XLabel.Name = "XLabel";
             this.XLabel.Size = new System.Drawing.Size(49, 20);
             this.XLabel.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.YLabel.AutoSize = true;
             this.YLabel.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.YLabel.Location = new System.Drawing.Point(44, 90);
+            this.YLabel.Location = new System.Drawing.Point(142, 175);
             this.YLabel.Name = "YLabel";
             this.YLabel.Size = new System.Drawing.Size(49, 20);
             this.YLabel.TabIndex = 6;
@@ -114,9 +114,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("標楷體", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(32, 23);
+            this.label1.Location = new System.Drawing.Point(130, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 23);
+            this.label1.Size = new System.Drawing.Size(98, 22);
             this.label1.TabIndex = 7;
             this.label1.Text = "人物座標";
             // 
