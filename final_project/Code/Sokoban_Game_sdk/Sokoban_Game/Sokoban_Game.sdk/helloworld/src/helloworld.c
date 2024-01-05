@@ -45,6 +45,7 @@
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
 
+
 //initial head file
 #include <stdio.h>
 #include "platform.h"
@@ -57,8 +58,6 @@
 #include "xgpio.h"			//
 #include "xuartps.h"		//包含UART有關得函數
 #include "sleep.h"			//延遲時間函數
-
-
 #include "Sokoban.h"		//推箱子遊戲的函示庫
 
 

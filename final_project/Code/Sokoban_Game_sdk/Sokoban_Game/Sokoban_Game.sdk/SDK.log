@@ -11331,3 +11331,17 @@ con
 ----------------End of Script----------------
 
 21:13:11 INFO  : Disconnected from the channel tcfchan#80.
+22:44:08 INFO  : Registering command handlers for SDK TCF services
+22:44:08 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+22:44:11 INFO  : XSCT server has started successfully.
+22:44:11 INFO  : Successfully done setting XSCT server connection channel  
+22:44:11 INFO  : Successfully done setting SDK workspace  
+22:44:11 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+22:44:11 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
+23:38:29 INFO  : Registering command handlers for SDK TCF services
+23:38:30 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\jason\Desktop\verilog_lab\soc_work\final_project\Code\Sokoban_Game_sdk\Sokoban_Game\Sokoban_Game.sdk\temp_xsdb_launch_script.tcl
+23:38:33 INFO  : XSCT server has started successfully.
+23:38:33 INFO  : Successfully done setting XSCT server connection channel  
+23:38:33 INFO  : Successfully done setting SDK workspace  
+23:38:33 INFO  : Processing command line option -hwspec C:/Users/jason/Desktop/verilog_lab/soc_work/final_project/Code/Sokoban_Game_sdk/Sokoban_Game/Sokoban_Game.sdk/sokoban_wrapper.hdf.
+23:38:33 INFO  : Checking for hwspec changes in the project sokoban_wrapper_hw_platform_0.
